@@ -60,20 +60,20 @@ const LoginModal = () => {
   }, [loginModal, registerModal]);
 
   const bodyContent = (
-    <div className='flex flex-col gap-4'>
-      <Heading title='Welcome back!' subtitle='Please login to your account' />
+    <div className="flex flex-col gap-4">
+      <Heading title="Welcome back!" subtitle="Please login to your account" />
       <Input
-        id='email'
-        label='Email'
+        id="email"
+        label="Email"
         disabled={isLoading}
         register={register}
         errors={errors}
         required
       />
       <Input
-        id='password'
-        label='Password'
-        type='password'
+        id="password"
+        label="Password"
+        type="password"
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -83,25 +83,25 @@ const LoginModal = () => {
   );
 
   const footerContent = (
-    <div className='flex flex-col gap-4 mt-3'>
+    <div className="flex flex-col gap-4 mt-3">
       <hr />
       <Button
         outline
-        label='Continue with Google'
+        label="Continue with Google"
         icon={FcGoogle}
         onClick={() => {}}
       />
       <Button
         outline
-        label='Continue with Github'
+        label="Continue with Github"
         icon={AiFillGithub}
         onClick={() => {}}
       />
-      <div className='text-neutral-500 text-center mt-4 font-light'>
+      <div className="text-neutral-500 text-center mt-4 font-light">
         <p>First time using Airbnb?</p>
         <span
           onClick={onToggle}
-          className='text-neutral-800 cursor-pointer gover:underline'
+          className="text-neutral-800 cursor-pointer gover:underline"
         >
           Create an account
         </span>
@@ -113,8 +113,8 @@ const LoginModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={loginModal.isOpen}
-      title='Login'
-      actionLabel='Continue'
+      title="Login"
+      actionLabel="Continue"
       onClose={loginModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}
