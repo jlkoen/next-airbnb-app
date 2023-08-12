@@ -4,12 +4,11 @@
     "es2021": true
   },
   "extends": [
-    "airbnb",
-    "airbnb-typescript",
-    "airbnb/hooks",
-    "plugin:react/recommended",
+    "airbnb-typescript/base",
+    "prettier",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:import/recommended"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
@@ -20,8 +19,11 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
+    "prettier/prettier": ["error", { "singleQuote": true }],
     "react/react-in-jsx-scope": ["off"],
     "react/jsx-filename-extension": ["off"],
-    "react/function-component-definition": ["off"]
+    "react/function-component-definition": ["off"],
+    "import/extensions": ["off"],
+    "import/no-unresolved": ["off"]
   }
 }
