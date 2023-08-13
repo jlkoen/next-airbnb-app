@@ -6,6 +6,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { useCallback, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
+import { signIn } from 'next-auth/react';
 
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
@@ -53,28 +54,28 @@ const RegisterModal = () => {
     loginModal.onOpen();
   }, [registerModal, loginModal]);
   const bodyContent = (
-    <div className="flex flex-col gap-4">
-      <Heading title="Welcome to Airbnb" subtitle="Create an account!" />
+    <div className='flex flex-col gap-4'>
+      <Heading title='Welcome to Airbnb' subtitle='Create an account!' />
       <Input
-        id="email"
-        label="Email"
+        id='email'
+        label='Email'
         disabled={isLoading}
         register={register}
         errors={errors}
         required
       />
       <Input
-        id="name"
-        label="Name"
+        id='name'
+        label='Name'
         disabled={isLoading}
         register={register}
         errors={errors}
         required
       />
       <Input
-        id="password"
-        label="Password"
-        type="password"
+        id='password'
+        label='Password'
+        type='password'
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -84,25 +85,25 @@ const RegisterModal = () => {
   );
 
   const footerContent = (
-    <div className="flex flex-col gap-4 mt-3">
+    <div className='flex flex-col gap-4 mt-3'>
       <hr />
       <Button
         outline
-        label="Continue with Google"
+        label='Continue with Google'
         icon={FcGoogle}
         onClick={() => {}}
       />
       <Button
         outline
-        label="Continue with Github"
+        label='Continue with Github'
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn('github')}
       />
-      <div className="text-neutral-500 text-center mt-4 font-light">
+      <div className='text-neutral-500 text-center mt-4 font-light'>
         <p>Already have an account?</p>
         <span
           onClick={onToggle}
-          className="text-neutral-800 cursor-pointer gover:underline"
+          className='text-neutral-800 cursor-pointer gover:underline'
         >
           Log in
         </span>
@@ -114,8 +115,8 @@ const RegisterModal = () => {
     <Modal
       disabled={isLoading}
       isOpen={registerModal.isOpen}
-      title="Register"
-      actionLabel="Continue"
+      title='Register'
+      actionLabel='Continue'
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}
