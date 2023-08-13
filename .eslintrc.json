@@ -7,7 +7,6 @@
     "airbnb-typescript/base",
     "prettier",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
     "plugin:import/recommended"
   ],
   "overrides": [],
@@ -19,7 +18,6 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "prettier/prettier": ["error", { "singleQuote": true }],
     "react/react-in-jsx-scope": ["off"],
     "react/jsx-filename-extension": ["off"],
     "react/function-component-definition": ["off"],
