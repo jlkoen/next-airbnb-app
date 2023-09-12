@@ -2,8 +2,10 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
   "name": "next-airbnb-app",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
   "features": {
     "ghcr.io/devcontainers-community/npm-features/prettier:1": {},
     "ghcr.io/devcontainers-contrib/features/json-server:1": {}
@@ -29,7 +31,8 @@
         "ecmel.vscode-html-css",
         "esbenp.prettier-vscode",
         "bradlc.vscode-tailwindcss",
-        "GitHub.copilot"
+        "GitHub.copilot",
+        "mongodb.mongodb-vscode"
       ]
     }
   }
